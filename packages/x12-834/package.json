@@ -1,7 +1,7 @@
 {
   "name": "@edigami/x12-834",
   "version": "0.0.0",
-  "description": "Parser for ANSI X12 834 Benefit Enrollment and Maintenance transactions.",
+  "description": "Provides functions for convenient interactions with ANSI X12 834 Benefit Enrollment and Maintenance transactions.",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,

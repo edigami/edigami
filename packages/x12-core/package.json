@@ -1,7 +1,7 @@
 {
   "name": "@edigami/x12-core",
   "version": "0.0.0",
-  "description": "Shared building blocks for parsing ANSI X12 EDI.",
+  "description": "Shared building blocks for working with ANSI X12 EDI.",
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
