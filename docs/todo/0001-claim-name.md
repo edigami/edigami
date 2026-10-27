@@ -10,7 +10,7 @@ These steps need your own accounts.
 - [ ] **JSR:** sign in at https://jsr.io and create the scope `@edigami`
 - [x] **GitHub:** create the org `edigami` at https://github.com/organizations/new
 - [x] **GitHub:** create the repo `edigami/edigami`
-- [ ] **Optional:** search `edigami` on [USPTO Trademark Search](https://tmsearch.uspto.gov) (earlier checks didn't cover trademark databases)
+- [x] **Optional:** search `edigami` on [USPTO Trademark Search](https://tmsearch.uspto.gov) (earlier checks didn't cover trademark databases). Searched on 2026-10-26: no trademark with that name found
 - [ ] **Optional:** buy the `edigami.dev` or `edigami.io` domain
 
 ## In this repo
