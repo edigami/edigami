@@ -28,3 +28,7 @@ Every published package must run on all of these:
 - Bun
 - Web browsers
 
+
+## Future additions
+
+- **Nx** — the next tool to add once the monorepo needs better management: task caching, affected-only CI runs and a dependency graph. Not adopted yet because pnpm workspaces already build packages in dependency order, which is enough for a handful of small packages. `nx init` can add it on top of the existing pnpm workspace later without moving files. Use Changesets for releases, not `nx release`, so only one tool versions the packages.
