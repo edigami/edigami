@@ -11,7 +11,7 @@ These steps need your own accounts.
 - [x] **GitHub:** create the org `edigami` at https://github.com/organizations/new
 - [x] **GitHub:** create the repo `edigami/edigami`
 - [x] **Optional:** search `edigami` on [USPTO Trademark Search](https://tmsearch.uspto.gov) (earlier checks didn't cover trademark databases). Searched on 2026-10-26: no trademark with that name found
-- [ ] **Optional:** buy the `edigami.dev` or `edigami.io` domain
+- [x] **Optional:** buy the `edigami.dev` or `edigami.io` domain. Bought `edigami.dev` through Namecheap on 2026-10-27
 
 ## In this repo
 

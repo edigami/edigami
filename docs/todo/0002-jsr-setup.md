@@ -48,4 +48,4 @@ At `jsr.io/@edigami` → **Settings**:
 
 ## How this fits the repo
 
-- [x] Once the scope and both packages exist and are linked, add a release workflow that also publishes to JSR. It should publish `x12-core` before `x12-834`, because `x12-834` depends on it. Done in `.github/workflows/release.yml`; `0.1.0` of both packages was published to JSR from CI on 2026-10-28. See [Releases](../architecture/tech-stack.md#releases).
+- [x] Once the scope and both packages exist and are linked, add a release workflow that also publishes to JSR. It should publish `x12-core` before `x12-834`, because `x12-834` depends on it. Done in `.github/workflows/release.yml`; `0.1.0` of both packages was published to JSR from CI on 2026-10-27. See [Releases](../architecture/tech-stack.md#releases).
