@@ -37,6 +37,30 @@ The tools and platforms chosen for the `@edigami` packages.
 - `tsconfig.base.json` includes only the `ES2022` library, with no DOM or Node.js types. A package that relies on runtime-specific APIs fails type-checking, which keeps packages portable across the target environments.
 - `isolatedDeclarations` requires explicit types on exports. That's what JSR needs to avoid "slow types", and it lets tsdown generate `.d.ts` files quickly.
 
+## Releases
+
+`.github/workflows/release.yml` runs on every push to `master`:
+
+- With pending changesets, it opens or updates a "chore: version packages" pull request made by `pnpm version-packages`.
+- With none, for example right after that pull request is merged, it runs `pnpm release` to publish every version not yet on npm, then `jsr publish` in `packages/x12-core` and `packages/x12-834`, in that order. JSR skips versions it already has.
+
+Both registries use trusted publishing (GitHub OIDC), so the repo holds no registry tokens and both add provenance:
+
+- **npm:** each package has a trusted publisher for `edigami/edigami` and `release.yml`, with only "Allow npm publish" checked. It needs npm 11.5.1+, so the workflow upgrades npm; pnpm 9 hands the upload to it. npm rejects the publish unless `repository.url` in `package.json` matches the repo.
+- **JSR:** each package is linked to `edigami/edigami` on jsr.io.
+- The `edigami` GitHub org and the repo both allow GitHub Actions to create pull requests; the org setting must be on before the repo setting can be.
+
+### Publishing by hand
+
+Only if CI can't. Never run `npm publish` in a package folder: npm ignores `publishConfig.exports` and doesn't rewrite `workspace:^`, so the result is broken. npm requires 2FA, and with a passkey, `--otp` codes don't exist, so pack with pnpm and upload with npm:
+
+```sh
+pnpm build
+cd packages/x12-core && pnpm pack && npm publish edigami-x12-core-<version>.tgz
+```
+
+`npm publish` prints a link to approve the publish with the passkey. Run Changesets commands from PowerShell or Windows Terminal rather than Git Bash, where Node often can't prompt interactively.
+
 ## Target execution environments
 
 Every published package must run on all of these:
