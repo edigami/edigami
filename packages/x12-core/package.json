@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "description": "Shared building blocks for working with ANSI X12 EDI.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edigami/edigami.git",
+    "directory": "packages/x12-core"
+  },
   "type": "module",
   "sideEffects": false,
   "exports": {
