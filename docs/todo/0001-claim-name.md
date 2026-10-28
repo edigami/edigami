@@ -6,7 +6,7 @@ Scope `@edigami` was chosen on 2026-10-26. First package: `@edigami/x12-834`; la
 
 These steps need your own accounts.
 
-- [ ] **npm:** create a free org named `edigami` at https://www.npmjs.com/org/create
+- [x] **npm:** create a free org named `edigami` at https://www.npmjs.com/org/create
 - [x] **JSR:** sign in at https://jsr.io and create the scope `@edigami`
 - [x] **GitHub:** create the org `edigami` at https://github.com/organizations/new
 - [x] **GitHub:** create the repo `edigami/edigami`
