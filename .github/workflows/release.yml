@@ -31,6 +31,7 @@ jobs:
       # With pending changesets, opens or updates the "Version Packages" pull
       # request. Once that is merged, publishes every version not yet on npm.
       - uses: changesets/action@v1
+        id: changesets
         with:
           version: pnpm version-packages
           publish: pnpm release
@@ -38,3 +39,14 @@ jobs:
           commit: "chore: version packages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # JSR publishing uses OIDC too: each package is linked to this repo on
+      # jsr.io. A version already on JSR is skipped. x12-core goes first
+      # because x12-834 depends on it.
+      - name: Publish x12-core to JSR
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        working-directory: packages/x12-core
+        run: npx --yes jsr publish
+      - name: Publish x12-834 to JSR
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        working-directory: packages/x12-834
+        run: npx --yes jsr publish
